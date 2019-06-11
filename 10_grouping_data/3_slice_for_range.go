@@ -23,8 +23,8 @@ func main() {
 
 	*/
 
-	fmt.Printf("len: %v\n", len(z))
-	fmt.Printf("cap: %v\n", cap(z))
+	fmt.Printf("len: %v\n", len(z)) //len 6
+	fmt.Printf("cap: %v\n", cap(z)) //cap 6
 	fmt.Printf("full slice: %v\n", z)
 	fmt.Printf("element at index position 3 is: %v\n", z[3])
 
