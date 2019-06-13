@@ -60,7 +60,8 @@ User defined types
 				- type Duration int64
 				- Duration has methods attached to it
 
+6)
 
-TODO up to 11:20
+All the packages in the standard library can be found here - https://golang.org/pkg/
 
 */
