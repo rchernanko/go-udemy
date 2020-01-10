@@ -9,6 +9,9 @@ import (
 var wg sync.WaitGroup
 
 func main() {
+
+	//TODO possibly just re-watch this and improve notes a little. Why does foo get executed AFTER bar?
+
 	//Start at the bottom comments first...
 
 	//There are some really useful functions within Go's runtime package:

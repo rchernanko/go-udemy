@@ -17,6 +17,10 @@ func main() {
 	}
 
 	f()
+
+	func(mood string) {
+		fmt.Printf("my mood is %s", mood)
+	}("meh")
 }
 
 /*
