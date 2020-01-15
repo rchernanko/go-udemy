@@ -31,3 +31,5 @@ func incrementor() func() int {
 		return x
 	}
 }
+
+//check out `15_exercises_ninja_level_6/10_exercises.go` for another example
