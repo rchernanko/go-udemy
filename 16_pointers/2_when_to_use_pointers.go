@@ -27,8 +27,6 @@ func main() {
 	fmt.Println(&z) //memory address
 	withPointer(&z)
 	fmt.Println(z) //90
-
-	//TODO up 5 mins 13 in video
 }
 
 func withoutPointer(y int) {
