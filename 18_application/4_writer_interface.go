@@ -1,5 +1,11 @@
 package main
 
+import (
+	"fmt"
+	"io"
+	"os"
+)
+
 /*
 
 The writer interface is really important to understand, it's found all through the standard library
@@ -26,6 +32,14 @@ And another (from the same post):
 
 Encode and Decode is basically for sending / receiving JSON to and from external applications
 
-TODO up to 2:10
+Back to the writer interface...
+
+- Found within the IO package - https://godoc.org/io#Writer
+- In fact, fmt.Println() uses the writer interface under the hood (using os.Stdout)
 
 */
+
+func main() {
+	fmt.Fprintln(os.Stdout, "Hello there")
+	io.WriteString(os.Stdout, "Using io.WriteString")
+}
