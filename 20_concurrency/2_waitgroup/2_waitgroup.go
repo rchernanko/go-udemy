@@ -10,11 +10,6 @@ var wg sync.WaitGroup
 
 func main() {
 
-	//TODO possibly just re-watch this and improve notes a little. Why does foo get executed AFTER bar?
-
-	//Start at the bottom comments first...
-
-	//There are some really useful functions within Go's runtime package:
 	fmt.Println("OS\t", runtime.GOOS)                                       //On my work laptop: darwin
 	fmt.Println("ARCH\t", runtime.GOARCH)                                   //On my work laptop: amd64
 	fmt.Println("Number of CPUs on this device\t", runtime.NumCPU())        //On my work laptop: 8
@@ -24,22 +19,22 @@ func main() {
 	wg.Add(1)
 
 	//Now let's launch 'foo' into a go routine.
-	go foo()
-	bar()
+	go foo2()
+	bar2()
 
 	fmt.Println("Number of CPUs on this device\t", runtime.NumCPU())        //On my work laptop: 8
 	fmt.Println("Number of existing go routines\t", runtime.NumGoroutine()) //AFTER launching 'foo' in go routine: 2
 	wg.Wait()
 }
 
-func foo() {
+func foo2() {
 	for i := 0; i < 10; i++ {
 		fmt.Println("foo:", i)
 	}
 	wg.Done() //remove that 1 thing we were waiting for
 }
 
-func bar() {
+func bar2() {
 	for i := 0; i < 10; i++ {
 		fmt.Println("bar:", i)
 	}
@@ -47,38 +42,7 @@ func bar() {
 
 /*
 
-- So when we first run this (without the go routines/waitgroup), we get the following printed to the console
-
-OS       darwin
-ARCH     amd64
-Number of CPUs on this device    8
-Number of existing go routines   1
-
-foo: 0
-foo: 1
-foo: 2
-foo: 3
-foo: 4
-foo: 5
-foo: 6
-foo: 7
-foo: 8
-foo: 9
-bar: 0
-bar: 1
-bar: 2
-bar: 3
-bar: 4
-bar: 5
-bar: 6
-bar: 7
-bar: 8
-bar: 9
-
-Number of CPUs on this device    8
-Number of existing go routines   1
-
-- And after launching foo into a go routine:
+- When we run the above (launching foo2 into a go routine BUT WITHOUT A WAIT GROUP), we get the following printed to the console:
 
 OS       darwin
 ARCH     amd64
