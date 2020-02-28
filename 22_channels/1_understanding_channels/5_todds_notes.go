@@ -25,4 +25,6 @@ Channels Introduction
 
 - channels allow us to pass values between goroutines
 
+//TODO read the documentation on channels in the language specification and in effective go
+
 */
