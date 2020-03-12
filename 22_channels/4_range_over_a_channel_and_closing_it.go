@@ -10,7 +10,8 @@ func main() {
 		for i := 0; i < 100; i++ {
 			c <- i
 		}
-		close(c) //we must close the channel otherwise we get a `fatal error: all goroutines are asleep - deadlock!` exception
+		close(c)
+		//we must close the channel (always on the sending side) otherwise we get a `fatal error: all goroutines are asleep - deadlock!` exception
 	}()
 
 	/*

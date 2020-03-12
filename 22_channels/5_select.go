@@ -39,9 +39,20 @@ func send(e, o, q chan<- int) {
 			o <- i
 		}
 	}
-	close(e) //but interestingly, if i comment out the close channel lines, this still works and there is no exception...
-	close(o)
 
 	q <- 0
 	close(q)
+
+	/*
+		Note re: why don't i need to close the e and o channels.
+		"You needn't close every channel when you've finished with it. It's only necessary to close a channel when it
+		is important to tell the receiving goroutines that all data have been sent. A channel that the garbage collector
+		determines to be unreachable will have its resources reclaimed whether or not it is closed."
+
+		https://stackoverflow.com/questions/8593645/is-it-ok-to-leave-a-channel-open
+
+		https://gobyexample.com/closing-channels
+
+		"Closing a channel indicates that no more values will be sent on it. This can be useful to communicate completion to the channel’s receivers."
+	*/
 }
