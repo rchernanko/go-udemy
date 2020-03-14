@@ -11,7 +11,8 @@ func main() {
 			c <- i
 		}
 		close(c)
-		//we must close the channel (always on the sending side) otherwise we get a `fatal error: all goroutines are asleep - deadlock!` exception
+		//when using a range, we must close the channel (always on the sending side) otherwise we get a `fatal error: all goroutines are asleep - deadlock!` exception
+		//With selects, I don't think we always need to close the channel
 	}()
 
 	/*

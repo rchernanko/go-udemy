@@ -1,0 +1,64 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func main() {
+	c := fanIn(boring("Joe"), boring("Ann"))
+	for i := 0; i < 10; i++ {
+		fmt.Println(<-c)
+	}
+	fmt.Println("You're both boring. I am leaving")
+}
+
+func boring(msg string) <-chan string {
+	c := make(chan string)
+	go func() {
+		for i := 0; ; i++ { //will just keep looping
+			c <- fmt.Sprintf("%s %d", msg, i)
+			time.Sleep(time.Duration(rand.Intn(1e3)) * time.Millisecond)
+		}
+	}()
+
+	return c
+}
+
+// FAN IN
+func fanIn(input1, input2 <-chan string) <-chan string {
+	c := make(chan string)
+	go func() {
+		for {
+			c <- <-input1 //takes the value from input1 and puts in onto the c channel
+		}
+	}()
+	go func() {
+		for {
+			c <- <-input2
+		}
+	}()
+	return c
+}
+
+/*
+	Could actually re-write the above function with a select statement instead of 2 separate go routines
+	See below
+*/
+
+func fanIn2(input1, input2 <-chan string) <-chan string {
+	c := make(chan string)
+	go func() {
+		for {
+			select {
+			case v := <-input1:
+				c <- v
+			case v := <-input2:
+				c <- v
+			}
+		}
+	}()
+
+	return c
+}

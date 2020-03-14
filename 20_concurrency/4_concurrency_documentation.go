@@ -11,7 +11,13 @@ package main
 	- "Go encourages a different approach in which shared values are passed around on channels and, in fact, never
 		actively shared by separate threads of execution. Only one goroutine has access to the value at any given time.
 			Data races cannot occur, by design. To encourage this way of thinking we have reduced it to a slogan:
-				Do not communicate by sharing memory; instead, share memory by communicating.
+				Don't communicate by sharing memory; instead, share memory by communicating.
+
+				Great video from Rob Pike on the origin of the above phrase - https://www.youtube.com/watch?v=f6kdp27TYZs&feature=youtu.be
+
+		Basically "Don't communicate by sharing memory; instead, share memory by communicating" = you don't have some
+		blob of memory and then put locks and mutexes around it to protect it from parallel access. Instead you use the
+		channel to pass the data back and forth between the go routines.
 
 	- i.e. use channels to manage the data between several go routines
 

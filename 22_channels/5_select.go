@@ -40,8 +40,8 @@ func send(e, o, q chan<- int) {
 		}
 	}
 
-	q <- 0
-	close(q)
+	q <- 5
+	//close(q)
 
 	/*
 		Note re: why don't i need to close the e and o channels.
