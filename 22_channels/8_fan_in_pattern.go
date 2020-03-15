@@ -22,7 +22,6 @@ func main() {
 	fanIn := make(chan int)
 
 	go send2(even, odd)
-
 	go receive2(even, odd, fanIn)
 
 	for v := range fanIn {
@@ -64,8 +63,6 @@ func receive2(even, odd <-chan int, fanIn chan<- int) {
 
 	wg.Wait()
 	close(fanIn)
-
-	//TODO up to 2:30 mins
 }
 
 /*
