@@ -1,1 +1,5 @@
-package _7_exercises_ninja_level_12
+package main
+
+/*
+	Didn't make notes on error handling so didn't do the exercises
+*/

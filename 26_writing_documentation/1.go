@@ -1,1 +1,5 @@
-package _6_writing_documentation
+package main
+
+/*
+	Didn't make notes on this. Just watched the videos
+*/

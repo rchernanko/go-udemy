@@ -1,1 +1,5 @@
-package _4_error_handling
+package main
+
+/*
+	Didn't make notes on this. Just watched the videos
+*/
