@@ -1,0 +1,1 @@
+package _5_exercises_ninja_level_11
