@@ -2,6 +2,6 @@ package __development_environment
 
 /**
 
-TODO not making notes just yet
+Went through a lot of this - just watched the videos
 
- */
+*/
