@@ -42,6 +42,4 @@ OS is: darwin
 		go install: no install location for directory /Users/richardchernanko/Development/go-udemy/21_exercises_ninja_level_9 outside GOPATH
         For more details see: 'go help gopath'
 
-	TODO - should probably watch the installing go videos at the beginning
-
 */

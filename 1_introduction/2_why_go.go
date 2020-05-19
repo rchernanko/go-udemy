@@ -21,7 +21,6 @@ Context:
 - Google felt that no other programming languages were meeting their needs
 - They hired some 'visionaries' to build a new language and version 1 was released in 2012
 - Lots more info on why Google created a new language here - https://golang.org/doc/faq#What_is_the_purpose_of_the_project
-- TODO read the above
 
 What is Go good for?
 
@@ -38,11 +37,9 @@ Guiding principles of GoLang design:
 - Expressive, comprehensible, sophisticated
 - clean, clear, easy to read
 - https://golang.org/doc/faq#principles
-- TODO read the above
 
 Todd Presentation has loads more info in it:
 
 - https://docs.google.com/presentation/d/1y0s8O0aApHqxG1vzV__a7mAXN4QiG4gyuGcjzpKGSqg/edit#slide=id.p
-- TODO read the above
 
- */
+*/

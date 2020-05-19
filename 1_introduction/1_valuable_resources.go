@@ -2,8 +2,6 @@ package __introduction
 
 /*
 
-- TODO - have a look through these
-
 1) https://docs.google.com/document/d/18-0u5CvNIr83oOfMXPoM4klVFASXGl3Vvua1wBGMIoQ/edit
 
 - He has put together a load of useful resources via the link above.
@@ -33,4 +31,4 @@ Both on the official GoLang website
 
 - FYI - The language spec - he says this is written in a 'not so easy to understand' language
 
- */
+*/

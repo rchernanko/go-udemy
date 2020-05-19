@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"golang.org/x/crypto/bcrypt"
 )
+
 /*
 
 What is bcrypt?
@@ -21,7 +22,7 @@ Go implementation of bcrypt:
 - Interestingly, the "x" package here is basically some go code that is more experimental and has not yet made it into
 the standard library
 
- */
+*/
 
 func main() {
 	s := `password123` //raw literal
@@ -44,5 +45,5 @@ func main() {
 		fmt.Println("passwords match!")
 	}
 
-	//TODO do we use bcrypt in the marketing management application
+	//TODO do we use bcrypt in the management application
 }

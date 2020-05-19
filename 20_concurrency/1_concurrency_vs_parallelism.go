@@ -26,6 +26,6 @@ Concurrency VS parallelism:
 - If you have multiple cores (CPUs), that concurrent code can run in parallel.
 - Writing concurrent code does NOT guarantee that your code is going to run in parallel (because it depends on the number of CPUs)
 
-//TODO he recommends a talk by Rob Pike - concurrency is not parallelism - you tube
+//he recommends a talk by Rob Pike - concurrency is not parallelism - you tube
 
 */

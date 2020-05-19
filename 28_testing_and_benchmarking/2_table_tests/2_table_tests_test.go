@@ -30,7 +30,4 @@ func TestMySum2(t *testing.T) {
 			t.Error("Expected", v.answer, "Got", i)
 		}
 	}
-
-	//in our marketing repository, we actually use t.Run for executing our table tests - https://blog.golang.org/subtests
-	//example in next directory
 }
