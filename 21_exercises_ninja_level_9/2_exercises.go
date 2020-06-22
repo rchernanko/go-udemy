@@ -28,7 +28,7 @@ type person struct {
 	age  int
 }
 
-func (p *person) Speak() {
+func (p *person) speak() {
 	fmt.Printf("Hi, my name is %s and I am %d years old\n", p.name, p.age)
 }
 
@@ -51,7 +51,7 @@ func main() {
 		See notes in `method_sets_revisited`
 	*/
 
-	p1.Speak()
+	p1.speak()
 
 	//But with interfaces, this will not work.
 	//saySomething(p1)
